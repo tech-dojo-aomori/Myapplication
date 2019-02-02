@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         t1 = findViewById(R.id.text);
 
-        Button b1 = findViewById(R.id.button23);
-        b1.setOnClickListener(new View.OnClickListener() {
+        Button button23 = findViewById(R.id.button23);
+        button23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String tmp = t1.getText().toString();
@@ -30,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 t1.setText(tmp);
             }
         });
+
+        Button b4  = findViewById(R.id.button24);
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tmp = t1.getText().toString();
+                tmp += "2";
+                t1.setText(tmp);
+            }
+        });
+
 
         Button b2 = findViewById(R.id.button26);
         b2.setOnClickListener(new View.OnClickListener() {
