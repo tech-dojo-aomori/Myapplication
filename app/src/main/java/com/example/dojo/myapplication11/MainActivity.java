@@ -111,12 +111,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button b0  = findViewById(R.id.button28);
+        b0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tmp = t1.getText().toString();
+                tmp += "0";
+                t1.setText(tmp);
+            }
+        });
+
         Button bP = findViewById(R.id.button26);
         bP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 num1 = Integer.parseInt(t1.getText().toString());
                 t1.setText("");
+                state = 1;
+            }
+        });
+
+        Button bM = findViewById(R.id.button22);
+        bM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num1 = Integer.parseInt(t1.getText().toString());
+                t1.setText("");
+                state = 2;
             }
         });
 
@@ -125,7 +146,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 num2 = Integer.parseInt(t1.getText().toString());
-                int result = num1 + num2;
+                int result=0;
+                if(state==1){
+                    result = num1 + num2;
+                }
+                else if(state==2){
+                    result = num1 - num2;
+                }
                 t1.setText(" " + result);
             }
         });
