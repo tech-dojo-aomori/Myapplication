@@ -161,33 +161,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button bC = findViewById(R.id.button12);
+        bC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num1 = Integer.parseInt(t1.getText().toString());
+                t1.setText("");
+                state = 5;
+            }
+        });
+
         Button bE = findViewById(R.id.button30);
         bE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 num2 = Integer.parseInt(t1.getText().toString());
                 int result;
-                if (state==1){
+                if (state == 1) {
                     result = num1 + num2;
-                }
-                else if (state==2){
+                } else if (state == 2) {
                     result = num1 - num2;
-                }
-                else if (state==3){
+                } else if (state == 3) {
                     result = num1 * num2;
-                }
-                else if (state==4){
+                } else if (state == 4) {
                     result = num1 / num2;
-                }
-                else {
+                } else if (state == 5) {
+                    result = 0;
+                } else {
                     result = 0;
                 }
                 t1.setText(" " + result);
             }
         });
-
-
-
 
 
     }
